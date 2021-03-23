@@ -1,5 +1,7 @@
 package logger
 
+/* a message to view a commit */
+
 import (
 	"fmt"
 	"io"
