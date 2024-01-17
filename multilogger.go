@@ -8,14 +8,9 @@ import (
 type multiLogger []Logger
 
 func MultiLogger(loggers ...Logger) Logger {
-	toRet := make(multiLogger, 0)
-	for _, l := range loggers {
-		var toAdd multiLogger
-		toAdd, ok := l.(multiLogger)
-		if !ok {
-			toAdd = multiLogger{l}
-		}
-		toRet = append(toRet, toAdd...)
+	toRet := make(multiLogger, len(loggers))
+	for i, l := range loggers {
+		toRet[i] = l
 	}
 	return toRet
 }
