@@ -54,6 +54,10 @@ type logger struct {
 	_      struct{}
 }
 
+func NopLogger() Logger {
+	return NewLogger(SILENT, "nop logger", io.Discard)
+}
+
 func NewLogLevel(level string) (LogLevel, error) {
 	switch level {
 	case SILENT.String():
