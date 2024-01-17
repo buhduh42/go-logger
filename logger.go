@@ -160,7 +160,7 @@ func (l *logger) Write(p []byte) (int, error) {
 }
 
 func (l *logger) warnWrite(numBytes, total int) {
-	println("this is the warn logger")
+	//println("this is the warn logger")
 	if l.level >= WARN {
 		l.writer.Write(
 			l.getMsg(
